@@ -310,5 +310,5 @@ Write a short summary to chat: N benchmarks authored, M capability axes covered,
 
 - Source video: https://www.youtube.com/watch?v=9aIYhjeYxzM (Nate B. Jones on private benches)
 - Full spec: https://github.com/CodefiLabs/mybench
-- Web version: https://mybench.codefi.io
+- Web version: https://mybench.codefiworks.com
 - Scoring methodology origin: PROJ-ai-judge-scoring "Don't Let the LLM Pick a Number"

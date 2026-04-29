@@ -10,7 +10,7 @@ Inspired by [Nate B. Jones' private benchmark](https://youtu.be/9aIYhjeYxzM) (Di
 
 ### Option A — Copy the prompt
 
-Open `personal-benchmark/SKILL.md` (or visit [mybench.codefi.io](https://mybench.codefi.io)), paste the interview prompt into any AI agent with shell + file access (Claude Code, Codex, Cursor, Paperclip, OpenCode, …), and answer the interview. The agent writes a benchmark suite to your working directory.
+Open `personal-benchmark/SKILL.md` (or visit [mybench.codefiworks.com](https://mybench.codefiworks.com)), paste the interview prompt into any AI agent with shell + file access (Claude Code, Codex, Cursor, Paperclip, OpenCode, …), and answer the interview. The agent writes a benchmark suite to your working directory.
 
 ### Option B — Install as a skill via skills.sh
 
@@ -79,7 +79,7 @@ The same prompt across the grid. The leaderboard tells you which combination to 
 mybench/
 ├── personal-benchmark/        # the skill (skills.sh indexes this folder)
 │   └── SKILL.md
-├── src/                       # SvelteKit web app (mybench.codefi.io)
+├── src/                       # SvelteKit web app (mybench.codefiworks.com)
 │   ├── routes/+page.svelte
 │   └── lib/prompt.js          # the interview prompt, single source of truth
 ├── static/

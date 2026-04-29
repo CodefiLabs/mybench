@@ -43,7 +43,7 @@ gh repo create CodefiLabs/mybench \
   --source=. \
   --remote=origin \
   --description="Your personal AI benchmark. Hand the interview prompt to any AI agent and get a saturate-resistant benchmark suite tuned to your actual work." \
-  --homepage="https://mybench.codefi.io" \
+  --homepage="https://mybench.codefiworks.com" \
   --push
 
 echo ""
@@ -53,5 +53,5 @@ echo "    https://skills.sh/CodefiLabs/mybench/personal-benchmark"
 echo ""
 echo "Next steps:"
 echo "  1. npm install && npm run dev   # local preview at http://localhost:5173"
-echo "  2. Set up Vercel / Netlify / Cloudflare Pages for mybench.codefi.io"
+echo "  2. Set up Vercel / Netlify / Cloudflare Pages for mybench.codefiworks.com"
 echo "  3. Add 'mybench' topic on the GitHub repo for discoverability"
