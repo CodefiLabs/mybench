@@ -248,7 +248,7 @@
 			</div>
 		</dl>
 		<p class="mt-6 max-w-2xl text-sm text-ink-faint">
-			The scoring methodology was calibrated on real submissions across 9 model families before being reused here. <a class="underline underline-offset-4 decoration-ink-faint hover:text-ink-strong hover:decoration-ink-strong" href="https://github.com/Codefilabs/pickanumber" target="_blank" rel="noopener">See the paper.</a>
+			The scoring methodology was calibrated on real submissions across 9 model families before being reused here. <a class="underline underline-offset-4 decoration-ink-faint hover:text-ink-strong hover:decoration-ink-strong" href="https://pickanumber.codefiworks.com" target="_blank" rel="noopener">See the paper.</a>
 		</p>
 	</div>
 </section>
@@ -282,7 +282,7 @@
 			The LLM never picks a number.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-soft">
-			The LLM finds discrete-impact evidence items; the formula computes the score. Methodology from <a class="font-semibold text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://github.com/Codefilabs/pickanumber" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>, calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models. Reused here unchanged.
+			The LLM finds discrete-impact evidence items; the formula computes the score. Methodology from <a class="font-semibold text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://pickanumber.codefiworks.com" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>, calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models. Reused here unchanged.
 		</p>
 
 		<!-- Worked example (leads — the page's strongest move) -->
@@ -527,7 +527,7 @@ self_check_span     = max(c.final) - min(c.final)
 		</div>
 
 		<p class="mt-8 max-w-2xl text-xs leading-relaxed text-ink-faint">
-			Built on the seven-principle scoring methodology from <a class="underline underline-offset-4 decoration-rule hover:text-ink-strong hover:decoration-ink-strong" href="https://github.com/Codefilabs/pickanumber" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>.
+			Built on the seven-principle scoring methodology from <a class="underline underline-offset-4 decoration-rule hover:text-ink-strong hover:decoration-ink-strong" href="https://pickanumber.codefiworks.com" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>.
 			The methodology is calibrated on 18 hackathon submissions and 342 BLS occupations across 9
 			models. Inspired by Nate B. Jones' private benchmark approach. The pairwise scoring layer
 			borrows from lechmazur/writing-style. Real artifact format-as-test is borrowed directly from

@@ -24,48 +24,170 @@ This skill is an interviewer + author + builder. You will:
 - **Two dimensions.** Score `model × harness`, not just model. Same prompt runs across many runners.
 - **Three failure modes.** Cover judgment, production discipline, AND long-horizon carry across the suite.
 
+## Interview style
+
+- **Warm, curious, one question at a time.** Reflect what you heard, then ask the next. Never batch.
+- **Chain off prior answers.** If A1 was "the eval doc," A2 begins "On THAT doc — was AI in the loop?" — not a fresh prompt.
+- **Multiple-choice when the user faces a blank page.** Trap categories, deliverable formats, and tooling — they can't generate what they don't have a name for. Use plain numbered lists in chat (works in any LLM):
+
+  ```
+  Pick all that apply (or describe your own):
+    1. ...
+    2. ...
+    Other: ___
+  ```
+
+  Always include an "Other / describe in your own words" escape — MC is for recognition, not constraint.
+- **MC also seeds ideas the user wouldn't generate alone.** Most users don't know what makes a benchmark *interesting* until they see options side-by-side. Pick MC entries that span the design space — common cases AND stretch cases the user probably hasn't considered (ethics tripwires, format spoofs, refusal muscles). Append a short "— tests for ___" tag where useful, so each option teaches as well as extracts.
+- **Offer silence-breakers, not leading questions.** When a question is genuinely open (A3–A5, D2, D3), don't pre-list answers. But if the user pauses, offer a *category prompt*: "If nothing comes to mind, a common pattern is X — does anything in that area fit?" The category sparks recall without scripting the answer.
+- **Confirm before moving on.** "Got it — [reflect]. Sound right? Next question." Advance only once the section's data points are captured.
+- **Specificity over scale.** Push back on hypotheticals: "A real recent file, not a typical example."
+
 ## The interview
 
-Time-box ~45 minutes total. Probe specifics. Use earlier answers in later questions.
+Six sections, ~45 min. Each section lists **Goal · Move on when**, then questions. Open warmly:
+
+> *"Let's build a benchmark that tells you something real about AI on YOUR work — not generic eval saturation. I'll ask one question at a time, six sections, ~45 min. Ready?"*
 
 ### A. The work that matters (10 min)
 
-A1. *"In the last 30 days, what's a piece of work where the result really mattered? Walk me through it."*
-A2. *"What's a recent piece of work where you used AI and it disappointed you?"* — The disappointment IS the benchmark.
-A3. *"A task you do regularly that an outsider would assume is easy but is actually hard?"*
-A4. *"A task where you'd never trust an AI today?"*
-A5. *"A task where you already trust AI completely?"* (no benchmark needed)
+**Goal.** One real recent piece of work + an AI disappointment + a deceptively-hard task + a never-trust task + an already-trust task.
+**Move on when.** All 5 are concrete (named files / projects / tasks — not abstractions).
+
+- **A1 — open.** *"In the last 30 days, a piece of work where the result really mattered. Walk me through it."* Reflect back.
+- **A2 — chain off A1.** *"On THAT work — was AI in the loop? Where did it fall short? If AI wasn't involved, name a different recent piece where it disappointed you."* The disappointment IS the benchmark.
+- **A3 — chain.** *"A regular task an outsider would assume is easy but is actually hard?"* If they pause: *"Common areas — research synthesis, document review, judgment calls under ambiguity, anything where 'good' is hard to define. Anything in there?"*
+- **A4 — chain.** *"A task you'd never trust an AI to do today?"* If they pause: *"Common areas — writing in your voice, irreversible external comms, legally binding output, code touching production, judgment with high stakes."*
+- **A5 — chain.** *"And a task you already trust AI with completely — what makes it different from A4?"* (no benchmark needed for this one)
 
 ### B. Deliverables (10 min)
 
-B1. *"What files actually got produced?"*
-B2. *"For each one, what would a reviewer reject it for?"*
-B3. *"The longest single piece of work you'd want an AI to handle end-to-end?"*
-B4. *"A deliverable type where the format itself is part of the test?"*
+**Goal.** Files produced + rejection criteria for each + longest end-to-end + any format-as-test deliverables.
+**Move on when.** ≥1 named file type per question with concrete reject criteria.
+
+- **B1 — chain off A1.** *"From the work you described — what files actually got produced?"*
+- **B2 — chain.** *"For each, what would a reviewer reject it for?"*
+- **B3 — chain.** *"The longest single piece you'd want an AI to handle end-to-end?"*
+- **B4 — MC.** Format-as-test reveals harness differences fast — the same model with vs without office libs is a different system.
+
+  ```
+  Any deliverable type where the FORMAT is part of the test?
+    1. PowerPoint (.pptx) — tests real Office output, not markdown wearing .pptx
+    2. Excel / Sheets (.xlsx) — formulas must actually compute
+    3. PDF with specific layout — tests pagination + typography handling
+    4. Code + passing tests — runtime is the judge, not vibe
+    5. Structured JSON / YAML against a schema — strict format compliance
+    6. Slide deck + speaker notes — multi-artifact coherence
+    7. Audio / video script with timing cues — temporal discipline
+    8. None — my work is text-only
+    9. Other: ___
+  ```
 
 ### C. The mess (10 min)
 
-C1. *"A recent dataset/file pile you had to wrangle?"*
-C2. *"What kinds of traps live in your data?"* — Capture every example.
-C3. *"What does 'production safe' mean in your work?"*
-C4. *"An error class your team has been bitten by more than once?"*
+**Goal.** A real messy dataset + ≥3 trap categories with real examples + a "production safe" definition + a recurring error class.
+**Move on when.** ≥3 trap categories named, each with a verbatim example.
+
+- **C1 — open.** *"A recent dataset or file pile you had to wrangle. What was messy?"*
+- **C2 — MC + extend.** Most users discover trap types they hadn't thought to test once they see the list. Push them to pick widely.
+
+  ```
+  Most messy data has "traps" — items the AI is supposed to catch and reject.
+  Which live in YOUR data? Pick all that apply (each tests something different):
+    1. Duplicates — tests dedup discipline
+    2. Fake / test records ("Mickey Mouse" pattern) — tests willingness to call BS
+    3. Type coercion (string "12" vs number 12; dates as text) — tests silent-failure blindspots
+    4. Jurisdiction / PII violations — tests compliance instinct
+    5. Format spoofs (.pptx that's actually markdown) — tests format-vs-content discrimination
+    6. Schema drift (columns added / removed / renamed mid-file) — tests robustness to drift
+    7. Mixed encodings or corrupted bytes — tests "garbage in" handling
+    8. Ethics tripwires (a request that should be refused) — tests the refusal muscle
+    9. Other: ___
+  ```
+
+  For each picked: *"Give me a real example from your work."* Capture verbatim. If they only pick 1–2, prompt: *"Any of the others worth planting even if they're rarer? Stretch traps surface model weaknesses common ones won't."*
+- **C3 — open.** *"What does 'production safe' mean in your work?"* If they pause, offer: *"Things like 'never silently drops a row,' 'never hallucinates a citation,' 'never sends external comms unreviewed' — that kind of bar."*
+- **C4 — chain.** *"An error class your team has been bitten by more than once?"*
 
 ### D. Taste & judgment (5 min)
 
-D1. *"What does 'taste' look like in your domain?"*
-D2. *"A thing only you'd catch that an outsider wouldn't?"*
-D3. *"An unspoken standard in your work?"*
+**Goal.** A concrete taste signal + a thing only they'd catch + an unspoken standard.
+**Move on when.** You have ≥1 specific taste signal you could plausibly test.
+
+- **D1 — MC, then describe.** Each option exposes a different model weakness — show the user the menu.
+
+  ```
+  "Taste" shows up differently in different domains. Pick the strongest match (or describe a different cut):
+    1. Tone & voice consistency — most models drift across long outputs
+    2. Information hierarchy (what to OMIT) — models love to include everything
+    3. Domain-specific elegance — separates competent output from "this looks like AI"
+    4. Audience-need vs audience-ask gap — what they actually need vs what they asked for
+    5. Knowing when to say no — refusal as judgment, not safety theater
+    6. Other: ___
+  ```
+
+  Then: *"Now show me what that looks like on a real deliverable."*
+- **D2 — chain.** *"A thing only you'd catch that an outsider wouldn't?"*
+- **D3 — chain.** *"An unspoken standard in your work?"*
 
 ### E. Models & harnesses today (5 min)
 
-E1. Day-to-day AI tools.
-E2. Which one for real work.
-E3. What they want to evaluate but don't have access to.
-E4. Test models only / harnesses only / full grid.
+**Goal.** Current tools + go-to for serious work + aspirational eval target + scoping decision.
+**Move on when.** You know which `model × harness` cells the suite must support.
+
+- **E1 — MC.**
+
+  ```
+  Which AI tools are you using day-to-day? (pick all)
+    1. Claude Code (CLI)
+    2. Cursor
+    3. Codex / ChatGPT with tools
+    4. Claude.ai (web / app)
+    5. Gemini / Google AI Studio
+    6. GitHub Copilot
+    7. Local models (Ollama, LM Studio, …)
+    8. Other: ___
+  ```
+- **E2 — chain.** *"Which of those do you reach for when the work REALLY matters?"*
+- **E3 — open.** *"A model or harness you want to evaluate but don't currently have access to?"*
+- **E4 — MC (press Enter for default).**
+
+  ```
+  Scope of this benchmark suite:
+    1. Models only (same harness, swap models)
+    2. Harnesses only (same model, swap harnesses)
+    3. Full grid (model × harness)   [default]
+  ```
 
 ### F. Capability axes synthesis (5 min)
 
-You drive this. Propose 3–5 axes. Examples: executive judgment + production discipline (Dingo), backend correctness (Splash Brothers), research + taste (Artemis II), long-horizon reliability, voice consistency, adversarial honesty. Restate, ask for confirmation.
+**Goal.** 3–5 named axes the user confirms.
+**Move on when.** They say "yes" to a specific list including any merges / cuts.
+
+You drive this. Restate from A–D, then propose:
+
+```
+Here are the axes I heard. Mark each Keep / Merge / Drop / Rename:
+  1. [Axis name] — [one-line description rooted in their A1 / C2 / D1 answers]
+  2. ...
+```
+
+Then, before locking in, offer a stretch list — common axes others have used that the user might want to add:
+
+```
+Common axes I didn't hear but you might want to test for:
+  - Executive judgment + production discipline (Dingo) — when the deliverable both makes a call and has to ship
+  - Backend correctness (Splash Brothers) — silent failure modes in code & data
+  - Research + taste (Artemis II) — synthesis where "good" depends on framing
+  - Long-horizon reliability — does the AI carry context across 60+ minutes?
+  - Voice consistency — drift across long outputs
+  - Adversarial honesty — handling pushback / sycophancy / refusal
+  - Format-as-test discipline — does the artifact actually open / run / parse?
+
+Anything here worth adding to your suite?
+```
+
+Default to 3–5 final axes. More than 5 and the user won't run them; fewer than 3 and you can't triangulate.
 
 ## Output — write to `benchmarks/`
 
