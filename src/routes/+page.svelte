@@ -107,7 +107,7 @@
 
 		<div class="mt-16 max-w-3xl lg:mt-24">
 			<p class="text-sm text-ink-faint">
-				After <a class="text-ink-soft underline underline-offset-4 decoration-rule hover:text-ink-strong hover:decoration-ink-strong" href="https://substack.com/@natesnewsletter" target="_blank" rel="noopener">Nate B. Jones</a>' private bench: Dingo, Splash Brothers, Artemis II.
+				After <a class="font-medium text-ink-soft underline underline-offset-4 decoration-ink-faint hover:text-ink-strong hover:decoration-ink-strong" href="https://substack.com/@natesnewsletter" target="_blank" rel="noopener">Nate B. Jones</a>' private bench: Dingo, Splash Brothers, Artemis II.
 			</p>
 			<h1
 				class="mt-8 text-display font-bold text-ink-strong"
@@ -207,7 +207,7 @@
 			Three tests, designed to fail.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-soft">
-			<a class="text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://substack.com/@natesnewsletter" target="_blank" rel="noopener">Nate B. Jones</a>' private bench has three: an executive launch, a dirty data migration, and a 3D interactive build. Each tests a different capability. Together they tell a story no single benchmark can. Yours will look different: different work, different traps, different deliverables. The shape is the same. (<a class="underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://youtu.be/9aIYhjeYxzM" target="_blank" rel="noopener">Watch Nate explain his</a>.)
+			<a class="font-semibold text-ink-strong underline underline-offset-4 decoration-ink-faint hover:decoration-ink-strong" href="https://substack.com/@natesnewsletter" target="_blank" rel="noopener">Nate B. Jones</a>' private bench has three: an executive launch, a dirty data migration, and a 3D interactive build. Each tests a different capability. Together they tell a story no single benchmark can. Yours will look different: different work, different traps, different deliverables. The shape is the same. (<a class="underline underline-offset-4 decoration-ink-faint hover:decoration-ink-strong" href="https://youtu.be/9aIYhjeYxzM" target="_blank" rel="noopener">Watch Nate explain his</a>.)
 		</p>
 
 		<div class="mt-14 divide-y divide-rule border-t border-rule">
