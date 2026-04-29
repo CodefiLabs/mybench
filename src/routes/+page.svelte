@@ -225,6 +225,35 @@
 </section>
 
 <!-- ╭──────────────────────────────────────────────────────────────╮
+     │ CALIBRATION STATS                                             │
+     ╰──────────────────────────────────────────────────────────────╯ -->
+<section class="border-b border-rule py-12 lg:py-14">
+	<div class="container-prose">
+		<dl class="grid grid-cols-2 gap-y-6 sm:grid-cols-4">
+			<div>
+				<dt class="font-mono text-4xl font-semibold tabular text-ink-strong sm:text-5xl">18</dt>
+				<dd class="mt-1 text-xs text-ink-faint">hackathon submissions</dd>
+			</div>
+			<div>
+				<dt class="font-mono text-4xl font-semibold tabular text-ink-strong sm:text-5xl">342</dt>
+				<dd class="mt-1 text-xs text-ink-faint">BLS occupations</dd>
+			</div>
+			<div>
+				<dt class="font-mono text-4xl font-semibold tabular text-ink-strong sm:text-5xl">9</dt>
+				<dd class="mt-1 text-xs text-ink-faint">model families</dd>
+			</div>
+			<div>
+				<dt class="font-mono text-4xl font-semibold tabular text-ink-strong sm:text-5xl">7</dt>
+				<dd class="mt-1 text-xs text-ink-faint">scoring principles</dd>
+			</div>
+		</dl>
+		<p class="mt-6 max-w-2xl text-sm text-ink-faint">
+			The scoring methodology was calibrated on real submissions across 9 model families before being reused here. <a class="underline underline-offset-4 decoration-ink-faint hover:text-ink-strong hover:decoration-ink-strong" href="https://github.com/Codefilabs/pickanumber" target="_blank" rel="noopener">See the paper.</a>
+		</p>
+	</div>
+</section>
+
+<!-- ╭──────────────────────────────────────────────────────────────╮
      │ TWO DIMENSIONS                                                │
      ╰──────────────────────────────────────────────────────────────╯ -->
 <section class="border-b border-rule py-16 lg:py-20">
