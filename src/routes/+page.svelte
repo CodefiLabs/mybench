@@ -29,22 +29,13 @@
 	}
 
 	const principles = [
-		{ n: 1, title: 'Separate observation from scoring', body: 'The LLM finds evidence. A formula — not the LLM — produces the score.' },
+		{ n: 1, title: 'Separate observation from scoring', body: 'The LLM finds evidence. A formula, not the LLM, produces the score.' },
 		{ n: 2, title: 'Confidence = evidence density', body: 'How much evidence the scorer found, not how sure the scorer feels.' },
 		{ n: 3, title: 'Discrete impact items', body: 'Every piece of evidence gets one of {+5, +3, +2, +1, -1, -2, -3, -5}. Forces commitment.' },
 		{ n: 4, title: 'Diminishing returns (sqrt)', body: 'normalized = net_impact / sqrt(total_items). The 40th item adds less than the 4th.' },
 		{ n: 5, title: 'Regress toward the mean', body: 'Sparse-evidence runs are pulled toward 50. Multiplier never exceeds 1.0.' },
 		{ n: 6, title: 'Force multiple perspectives', body: '5 perspectives × 5 criteria. Single-lens bias is structurally prevented.' },
 		{ n: 7, title: 'Cross-modal adversarial synthesis', body: 'Independent passes by different model families catch contradictions.' }
-	];
-
-	const perspectives = ['requester', 'sme', 'end_user', 'production', 'adversary'];
-	const criteria = [
-		{ key: 'brief_fidelity', label: 'brief fidelity' },
-		{ key: 'trap_handling', label: 'trap handling' },
-		{ key: 'production_correctness', label: 'production' },
-		{ key: 'domain_judgment', label: 'domain judgment' },
-		{ key: 'long_horizon_carry', label: 'long-horizon carry' }
 	];
 
 	const archetypes = [
@@ -80,7 +71,7 @@
 </script>
 
 <svelte:head>
-	<title>MyBench — your personal AI benchmark</title>
+	<title>MyBench: your personal AI benchmark</title>
 </svelte:head>
 
 <!-- ╭──────────────────────────────────────────────────────────────╮
@@ -111,7 +102,9 @@
 		</div>
 
 		<div class="mt-16 max-w-3xl lg:mt-24">
-			<p class="text-sm text-ink-faint">After Nate B. Jones' private bench: Dingo, Splash Brothers, Artemis II.</p>
+			<p class="text-sm text-ink-faint">
+				After <a class="text-ink-soft underline underline-offset-4 decoration-rule hover:text-ink-strong hover:decoration-ink-strong" href="https://substack.com/@natesnewsletter" target="_blank" rel="noopener">Nate B. Jones</a>' private bench: Dingo, Splash Brothers, Artemis II.
+			</p>
 			<h1
 				class="mt-8 text-display font-bold text-ink-strong"
 			>
@@ -122,7 +115,7 @@
 				Public benchmarks tell you which model is best at average tasks. They saturate fast and they
 				don't tell you which one to reach for when <em>your</em> messy work hits <em>your</em> desk on
 				Tuesday. MyBench is a 45-minute interview that turns your actual work into a private benchmark
-				suite — and runs it across <span class="font-mono text-ink">model × harness</span> combos
+				suite, and runs it across <span class="font-mono text-ink">model × harness</span> combos
 				so you know what to use, when.
 			</p>
 
@@ -160,7 +153,7 @@
 				<h2 class="text-2xl font-semibold leading-[1.15] text-ink-strong">None of it tells you which one to reach for.</h2>
 				<p class="mt-4 text-ink-soft">
 					Easy benchmarks make all frontier models look interchangeable. The differences only show
-					up on real work — underspecified briefs, messy files, traps in the data, ugly judgment
+					up on real work: underspecified briefs, messy files, traps in the data, ugly judgment
 					calls.
 				</p>
 			</div>
@@ -186,7 +179,7 @@
 
 		<ol class="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
 			{#each [
-				{ n: '01', title: 'Copy the prompt', body: 'Or install it as a skill. Hand it to any AI agent with shell access — Claude Code, Codex, Cursor, Paperclip.' },
+				{ n: '01', title: 'Copy the prompt', body: 'Or install it as a skill. Hand it to any AI agent with shell access: Claude Code, Codex, Cursor, Paperclip.' },
 				{ n: '02', title: 'Answer the interview', body: 'Six sections covering your real work, your messy data, your taste, your standards. ~45 min.' },
 				{ n: '03', title: 'Get a benchmark suite', body: 'Three to five tests with prompts, input files, planted traps, and an evidence guide for scoring.' },
 				{ n: '04', title: 'Run model × harness', body: 'Same suite across the combinations you care about. Score using the seven-principle formula.' }
@@ -202,7 +195,7 @@
 </section>
 
 <!-- ╭──────────────────────────────────────────────────────────────╮
-     │ ARCHETYPES — Nate's three                                     │
+     │ ARCHETYPES: Nate's three                                      │
      ╰──────────────────────────────────────────────────────────────╯ -->
 <section class="border-b border-rule py-24 lg:py-32">
 	<div class="container-prose">
@@ -210,10 +203,7 @@
 			Three tests, designed to fail.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-soft">
-			Nate B. Jones' private bench has three: an executive launch, a dirty data migration, and a 3D
-			interactive build. Each tests a different capability. Together they tell a story no single
-			benchmark can. Yours will look different — different work, different traps, different
-			deliverables — but the shape is the same.
+			<a class="text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://substack.com/@natesnewsletter" target="_blank" rel="noopener">Nate B. Jones</a>' private bench has three: an executive launch, a dirty data migration, and a 3D interactive build. Each tests a different capability. Together they tell a story no single benchmark can. Yours will look different: different work, different traps, different deliverables. The shape is the same. (<a class="underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://youtu.be/9aIYhjeYxzM" target="_blank" rel="noopener">Watch Nate explain his</a>.)
 		</p>
 
 		<div class="mt-14 divide-y divide-rule border-t border-rule">
@@ -239,9 +229,7 @@
 			Score <span class="font-mono font-semibold text-ink-strong">model × harness</span>, not just model.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-soft">
-			GPT-5.5 in Codex is a different product than GPT-5.5 in chat. Claude Opus in Claude Code is a
-			different product than Claude Opus on the API. The harness is half the answer. MyBench scores
-			both axes.
+			A <em class="not-italic font-semibold text-ink-strong">harness</em> is the runtime around a model: an IDE plugin, a CLI agent, a chat box, a raw API call. GPT-5.5 in Codex is a different product than GPT-5.5 in chat. Claude Opus in Claude Code is a different product than Claude Opus on the API. The harness is half the answer. MyBench scores both axes.
 		</p>
 
 		<div class="mt-10 flex flex-wrap gap-2">
@@ -261,8 +249,7 @@
 			The LLM never picks a number.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-soft">
-			MyBench imports the seven-principle scoring methodology from
-			<a class="text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://github.com/CodefiLabs/mybench" target="_blank" rel="noopener">PROJ-ai-judge-scoring</a>: the LLM finds discrete-impact evidence items, math computes the score. Calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models. Validated. Reused here unchanged.
+			The seven-principle scoring methodology comes from <em class="not-italic font-semibold text-ink-strong">Don't Let the LLM Pick a Number</em>: the LLM finds discrete-impact evidence items, math computes the score. Calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models. Validated, reused here unchanged.
 		</p>
 
 		<!-- 7 principles -->
@@ -278,42 +265,47 @@
 			{/each}
 		</ol>
 
-		<!-- 5x5 matrix -->
+		<!-- Worked example -->
 		<div class="mt-16">
 			<h3 class="text-2xl font-semibold leading-[1.15] text-ink-strong">Five perspectives × five criteria.</h3>
 			<p class="mt-3 max-w-3xl text-ink-soft">
-				Every benchmark scores against this matrix. Customizable per benchmark when the domain
-				demands. The formula runs once per criterion; the overall score is a weighted average.
+				Every benchmark scores against a 5×5 matrix: 5 perspectives (requester, sme, end_user, production, adversary) and 5 criteria (brief fidelity, trap handling, production, domain judgment, long-horizon carry). Each cell takes a few impact items and computes one number. Here's a single cell, end to end.
 			</p>
 
-			<div class="mt-8 overflow-x-auto rounded-lg border border-rule">
-				<table class="w-full min-w-[640px] border-collapse text-left text-xs">
-					<thead class="bg-paper-sunk">
-						<tr>
-							<th class="border-b border-r border-rule px-3 py-3 font-mono text-ink-faint"
-								>perspective ↓ / criterion →</th
-							>
-							{#each criteria as c}
-								<th class="border-b border-rule px-3 py-3 font-mono text-ink-soft">{c.label}</th>
-							{/each}
-						</tr>
-					</thead>
-					<tbody class="bg-paper">
-						{#each perspectives as p, rowIdx}
-							<tr class={rowIdx % 2 === 0 ? '' : 'bg-paper-sunk'}>
-								<td class="border-r border-rule px-3 py-3 font-mono font-semibold text-ink">
-									{p}
-								</td>
-								{#each criteria as _}
-									<td class="px-3 py-3 text-ink-faint">
-										<span class="inline-block h-2 w-2 rounded-full bg-rule"></span>
-									</td>
-								{/each}
-							</tr>
-						{/each}
-					</tbody>
-				</table>
+			<div class="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-12">
+				<div>
+					<p class="font-mono text-xs text-ink-faint">benchmark <span class="text-ink-strong">Splash Brothers</span> · perspective <span class="text-ink-strong">production</span> · criterion <span class="text-ink-strong">trap_handling</span></p>
+					<ul class="mt-5 divide-y divide-rule border-t border-rule font-mono text-sm">
+						<li class="grid grid-cols-[3rem_1fr] gap-3 py-3">
+							<span class="tabular font-semibold text-ink-strong">+3</span>
+							<span class="text-ink">Caught Mickey Mouse, flagged as a planted fake</span>
+						</li>
+						<li class="grid grid-cols-[3rem_1fr] gap-3 py-3">
+							<span class="tabular font-semibold text-ink-strong">+3</span>
+							<span class="text-ink">Merged 7/7 duplicate pairs, preserved provenance</span>
+						</li>
+						<li class="grid grid-cols-[3rem_1fr] gap-3 py-3">
+							<span class="tabular font-semibold text-ink-strong">−2</span>
+							<span class="text-ink">Missed 2/13 typo records (rule-based stage)</span>
+						</li>
+					</ul>
+				</div>
+				<pre class="overflow-x-auto rounded-lg border border-rule bg-paper-sunk p-5 font-mono text-xs leading-relaxed text-ink"><code
+					>{`net_impact   = +3 +3 −2 = +4
+total_items  = 3
+normalized   = 4 / √3       = 2.31
+raw          = 50 + 2.31×8  = 68.5
+density      = 3 / 20       = 0.15
+multiplier   = 0.75 + 0.25×0.15 = 0.79
+final        = 50 + (68.5−50)×0.79
+final        = 65
+confidence   = 0.15  (low: 3 items)`}</code
+				></pre>
 			</div>
+
+			<p class="mt-6 max-w-3xl text-sm text-ink-faint">
+				The other 24 cells of the matrix get the same treatment. The overall score is the weighted average of the five final-per-criterion numbers; overall confidence is the minimum across criteria. Sparse evidence is visibly low-confidence, never silently confident.
+			</p>
 		</div>
 
 		<!-- Formula -->
@@ -377,9 +369,9 @@ self_check_span     = max(c.final) - min(c.final)
 						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
 							><path d="M20 6L9 17l-5-5" /></svg
 						>
-						Copied — go paste it
+						Copied. Go paste it.
 					{:else if copyState === 'error'}
-						Couldn't copy — select manually below
+						Couldn't copy. Select manually below.
 					{:else}
 						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
 							><rect x="9" y="9" width="13" height="13" rx="2" /><path
@@ -488,7 +480,8 @@ self_check_span     = max(c.final) - min(c.final)
 			<div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
 				<a class="text-ink-faint transition hover:text-ink" href="https://github.com/CodefiLabs/mybench" target="_blank" rel="noopener">GitHub</a>
 				<a class="text-ink-faint transition hover:text-ink" href="https://skills.sh/CodefiLabs/mybench/personal-benchmark" target="_blank" rel="noopener">skills.sh</a>
-				<a class="text-ink-faint transition hover:text-ink" href="https://www.youtube.com/watch?v=9aIYhjeYxzM" target="_blank" rel="noopener">Source video</a>
+				<a class="text-ink-faint transition hover:text-ink" href="https://youtu.be/9aIYhjeYxzM" target="_blank" rel="noopener">Source video</a>
+			<a class="text-ink-faint transition hover:text-ink" href="https://substack.com/@natesnewsletter" target="_blank" rel="noopener">Nate's newsletter</a>
 				<span class="text-ink-faint">·</span>
 				<span class="text-ink-faint">MIT</span>
 			</div>
