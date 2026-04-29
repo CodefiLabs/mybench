@@ -86,7 +86,7 @@
 				>
 					M
 				</div>
-				<span class="font-mono text-sm font-semibold tracking-wider text-ink">MYBENCH</span>
+				<span class="text-base font-bold tracking-tight text-ink-strong">MyBench</span>
 			</div>
 			<nav class="flex items-center gap-6 text-sm">
 				<a class="text-ink-soft transition-colors duration-150 ease-out hover:text-ink-strong" href="#how">How it works</a>
@@ -509,7 +509,8 @@ self_check_span     = max(c.final) - min(c.final)
 				>
 					M
 				</div>
-				<span class="font-mono text-xs tracking-wider text-ink-soft">MYBENCH · <a class="transition-colors duration-150 ease-out hover:text-ink-strong" href="https://codefiworks.com" target="_blank" rel="noopener">CODEFI</a></span>
+				<span class="text-sm font-bold tracking-tight text-ink-strong">MyBench</span>
+				<span class="text-sm text-ink-faint">by <a class="text-ink-soft transition-colors duration-150 ease-out hover:text-ink-strong" href="https://codefiworks.com" target="_blank" rel="noopener">Codefi</a></span>
 			</div>
 
 			<div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
