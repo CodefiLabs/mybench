@@ -249,24 +249,11 @@
 			The LLM never picks a number.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-soft">
-			The seven-principle scoring methodology comes from <a class="font-semibold text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://github.com/Codefilabs/pickanumber" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>: the LLM finds discrete-impact evidence items, math computes the score. Calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models. Validated, reused here unchanged.
+			The LLM finds discrete-impact evidence items; the formula computes the score. Methodology from <a class="font-semibold text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://github.com/Codefilabs/pickanumber" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>, calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models. Reused here unchanged.
 		</p>
 
-		<!-- 7 principles -->
-		<ol class="mt-14 grid gap-x-12 gap-y-2 sm:grid-cols-2">
-			{#each principles as p}
-				<li class="grid grid-cols-[2.5rem_1fr] items-baseline gap-x-3 border-t border-rule py-5">
-					<span class="font-mono text-sm font-semibold text-ink-faint">0{p.n}</span>
-					<div>
-						<h3 class="text-base font-semibold leading-snug text-ink-strong">{p.title}</h3>
-						<p class="mt-2 text-sm leading-relaxed text-ink-soft">{p.body}</p>
-					</div>
-				</li>
-			{/each}
-		</ol>
-
-		<!-- Worked example -->
-		<div class="mt-16">
+		<!-- Worked example (leads — the page's strongest move) -->
+		<div class="mt-14">
 			<h3 class="text-2xl font-semibold leading-[1.15] text-ink-strong">Five perspectives × five criteria.</h3>
 			<p class="mt-3 max-w-3xl text-ink-soft">
 				Every benchmark scores against a 5×5 matrix: 5 perspectives (requester, sme, end_user, production, adversary) and 5 criteria (brief fidelity, trap handling, production, domain judgment, long-horizon carry). Each cell takes a few impact items and computes one number. Here's a single cell, end to end.
@@ -342,6 +329,28 @@ self_check_span     = max(c.final) - min(c.final)
 				never amplifies). Sparse evidence is visibly low-confidence, not silently confident.
 			</p>
 		</div>
+
+		<!-- Seven principles (full philosophy, optional read) -->
+		<details class="group mt-16 border-t border-rule pt-8">
+			<summary class="cursor-pointer select-none list-none text-base font-semibold text-ink-strong transition-colors duration-150 ease-out hover:text-ink">
+				<span class="inline-flex items-baseline gap-2">
+					<span class="font-mono text-sm text-ink-faint transition-transform duration-150 ease-out group-open:rotate-90">›</span>
+					Seven principles, in case you want the philosophy
+				</span>
+				<span class="ml-1 text-sm font-normal text-ink-faint">(skip if the math is enough)</span>
+			</summary>
+			<ol class="mt-8 grid gap-x-12 gap-y-2 sm:grid-cols-2">
+				{#each principles as p}
+					<li class="grid grid-cols-[2.5rem_1fr] items-baseline gap-x-3 border-t border-rule py-5">
+						<span class="font-mono text-sm font-semibold text-ink-faint">0{p.n}</span>
+						<div>
+							<h3 class="text-base font-semibold leading-snug text-ink-strong">{p.title}</h3>
+							<p class="mt-2 text-sm leading-relaxed text-ink-soft">{p.body}</p>
+						</div>
+					</li>
+				{/each}
+			</ol>
+		</details>
 	</div>
 </section>
 
