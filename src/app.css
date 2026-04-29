@@ -64,4 +64,8 @@
 	.tag {
 		@apply inline-flex items-center rounded-full border border-rule bg-paper px-2.5 py-1 font-mono text-xs text-ink-soft;
 	}
+
+	.phrase {
+		@apply font-mono font-semibold text-ink-strong;
+	}
 }

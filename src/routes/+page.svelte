@@ -115,7 +115,7 @@
 				Public benchmarks tell you which model is best at average tasks. They saturate fast and they
 				don't tell you which one to reach for when <em>your</em> messy work hits <em>your</em> desk on
 				Tuesday. MyBench is a 45-minute interview that turns your actual work into a private benchmark
-				suite, and runs it across <span class="font-mono text-ink">model × harness</span> combos
+				suite, and runs it across <span class="phrase">model × harness</span> combos
 				so you know what to use, when.
 			</p>
 
@@ -226,7 +226,7 @@
 <section class="border-b border-rule py-16 lg:py-20">
 	<div class="container-prose">
 		<h2 class="text-section font-semibold text-ink-strong">
-			Score <span class="font-mono font-semibold text-ink-strong">model × harness</span>, not just model.
+			Score <span class="phrase">model × harness</span>, not just model.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-soft">
 			A <em class="not-italic font-semibold text-ink-strong">harness</em> is the runtime around a model: an IDE plugin, a CLI agent, a chat box, a raw API call. GPT-5.5 in Codex is a different product than GPT-5.5 in chat. Claude Opus in Claude Code is a different product than Claude Opus on the API. The harness is half the answer. MyBench scores both axes.
@@ -448,7 +448,7 @@ self_check_span     = max(c.final) - min(c.final)
 				Your benchmark suite lands in <code class="font-mono text-ink">benchmarks/</code> in your
 				working directory. Each folder has a prompt, input files, planted traps, and an evidence
 				guide. Run a benchmark by handing the prompt to a runner (any model + any harness). Score it
-				with the seven-principle method. Compare cells in your <span class="font-mono">model × harness</span> grid.
+				with the seven-principle method. Compare cells in your <span class="phrase">model × harness</span> grid.
 				Re-run weekly when a new model lands.
 			</p>
 		</div>
