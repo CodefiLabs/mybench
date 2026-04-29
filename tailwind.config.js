@@ -19,25 +19,20 @@ export default {
 				'section': ['clamp(1.875rem, 2.5vw + 1rem, 2.625rem)', { lineHeight: '1.1', letterSpacing: '-0.015em' }]
 			},
 			colors: {
-				ink: {
-					50: '#f6f6f7',
-					100: '#e7e7e9',
-					200: '#cfcfd3',
-					300: '#a8a8af',
-					400: '#7a7a83',
-					500: '#5a5a63',
-					600: '#42424a',
-					700: '#2e2e35',
-					800: '#1c1c22',
-					900: '#0e0e12'
+				paper: {
+					DEFAULT: 'oklch(98.5% 0.005 75)',
+					sunk: 'oklch(96.5% 0.008 75)'
 				},
-				accent: {
-					50: '#fff7ed',
-					100: '#ffedd5',
-					400: '#fb923c',
-					500: '#f97316',
-					600: '#ea580c',
-					700: '#c2410c'
+				rule: 'oklch(90% 0.008 75)',
+				ink: {
+					faint: 'oklch(64% 0.012 75)',
+					soft: 'oklch(42% 0.015 75)',
+					DEFAULT: 'oklch(20% 0.015 75)',
+					strong: 'oklch(13% 0.020 75)'
+				},
+				mark: {
+					DEFAULT: 'oklch(64% 0.190 38)',
+					deep: 'oklch(54% 0.190 38)'
 				}
 			}
 		}

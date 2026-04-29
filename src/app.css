@@ -26,8 +26,8 @@
 	}
 
 	::selection {
-		background: theme('colors.accent.500');
-		color: theme('colors.ink.900');
+		background: theme('colors.ink.strong');
+		color: theme('colors.paper.DEFAULT');
 	}
 }
 
@@ -41,18 +41,18 @@
 	}
 
 	.btn-primary {
-		@apply bg-accent-500 text-ink-900 hover:bg-accent-400;
+		@apply bg-mark text-paper hover:bg-mark-deep;
 	}
 
 	.btn-ghost {
-		@apply border border-ink-700 text-ink-100 hover:border-ink-500 hover:bg-ink-800;
+		@apply border border-rule text-ink hover:border-ink-soft;
 	}
 
 	.kbd {
-		@apply rounded border border-ink-700 bg-ink-800 px-1.5 py-0.5 font-mono text-xs text-ink-200;
+		@apply rounded border border-rule bg-paper-sunk px-1.5 py-0.5 font-mono text-xs text-ink-soft;
 	}
 
 	.tag {
-		@apply inline-flex items-center rounded-full border border-ink-700 bg-ink-800 px-2.5 py-1 font-mono text-xs text-ink-300;
+		@apply inline-flex items-center rounded-full border border-rule bg-paper px-2.5 py-1 font-mono text-xs text-ink-soft;
 	}
 }
