@@ -89,9 +89,9 @@
 				<span class="font-mono text-sm font-semibold tracking-wider text-ink">MYBENCH</span>
 			</div>
 			<nav class="flex items-center gap-6 text-sm">
-				<a class="text-ink-soft transition hover:text-ink" href="#how">How it works</a>
-				<a class="text-ink-soft transition hover:text-ink" href="#methodology">Methodology</a>
-				<a class="text-ink-soft transition hover:text-ink" href="#prompt">Get the prompt</a>
+				<a class="text-ink-soft transition-colors duration-150 ease-out hover:text-ink-strong" href="#how">How it works</a>
+				<a class="text-ink-soft transition-colors duration-150 ease-out hover:text-ink-strong" href="#methodology">Methodology</a>
+				<a class="text-ink-soft transition-colors duration-150 ease-out hover:text-ink-strong" href="#prompt">Get the prompt</a>
 				<a
 					class="hidden md:inline text-ink-soft transition hover:text-ink"
 					href="https://github.com/CodefiLabs/mybench"
@@ -364,7 +364,7 @@ self_check_span     = max(c.final) - min(c.final)
 					directory.
 				</p>
 
-				<button onclick={copyPrompt} class="btn btn-primary mt-5 w-full">
+				<button type="button" onclick={copyPrompt} class="btn btn-primary mt-5 w-full">
 					{#if copyState === 'copied'}
 						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
 							><path d="M20 6L9 17l-5-5" /></svg
@@ -400,16 +400,14 @@ self_check_span     = max(c.final) - min(c.final)
 				<h3 class="text-lg font-semibold text-ink-strong">B · Install as a skill <span class="text-sm font-normal text-ink-faint">via skills.sh</span></h3>
 				<p class="mt-2 text-sm text-ink-soft">
 					If your agent supports the
-					<a class="underline-offset-4 hover:underline" href="https://skills.sh" target="_blank" rel="noopener"
-						>skills</a
-					> ecosystem (Claude Code, Cursor, Goose, OpenCode, and many others), one command installs MyBench
-					as a callable skill.
+					<a class="text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://skills.sh" target="_blank" rel="noopener">skills</a> ecosystem (Claude Code, Cursor, Goose, OpenCode, and many others), one command installs MyBench as a callable skill.
 				</p>
 
 				<div class="mt-5">
 					<button
+						type="button"
 						onclick={copyInstall}
-						class="group flex w-full items-center justify-between rounded-md border border-rule bg-paper-sunk px-4 py-3 font-mono text-sm text-ink transition hover:border-ink-soft"
+						class="group flex w-full items-center justify-between rounded-md border border-rule bg-paper-sunk px-4 py-3 font-mono text-sm text-ink transition-colors duration-150 ease-out hover:border-ink-soft"
 					>
 						<span><span class="text-ink-faint">$</span> {INSTALL_CMD}</span>
 						{#if installCopyState === 'copied'}
@@ -430,12 +428,7 @@ self_check_span     = max(c.final) - min(c.final)
 						{/if}
 					</button>
 					<p class="mt-3 text-xs text-ink-faint">
-						Lists at <a
-							class="underline-offset-4 hover:text-ink hover:underline"
-							href="https://skills.sh/CodefiLabs/mybench/personal-benchmark"
-							target="_blank"
-							rel="noopener">skills.sh/CodefiLabs/mybench/personal-benchmark</a
-						>.
+						Lists at <a class="underline underline-offset-4 decoration-rule hover:text-ink-strong hover:decoration-ink-strong" href="https://skills.sh/CodefiLabs/mybench/personal-benchmark" target="_blank" rel="noopener">skills.sh/CodefiLabs/mybench/personal-benchmark</a>.
 					</p>
 				</div>
 
@@ -465,7 +458,7 @@ self_check_span     = max(c.final) - min(c.final)
 <!-- ╭──────────────────────────────────────────────────────────────╮
      │ FOOTER                                                        │
      ╰──────────────────────────────────────────────────────────────╯ -->
-<footer class="bg-paper py-12">
+<footer class="py-12">
 	<div class="container-prose">
 		<div class="flex flex-col gap-6 border-t border-rule pt-10 sm:flex-row sm:items-center sm:justify-between">
 			<div class="flex items-center gap-3">
@@ -478,10 +471,10 @@ self_check_span     = max(c.final) - min(c.final)
 			</div>
 
 			<div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-				<a class="text-ink-faint transition hover:text-ink" href="https://github.com/CodefiLabs/mybench" target="_blank" rel="noopener">GitHub</a>
-				<a class="text-ink-faint transition hover:text-ink" href="https://skills.sh/CodefiLabs/mybench/personal-benchmark" target="_blank" rel="noopener">skills.sh</a>
-				<a class="text-ink-faint transition hover:text-ink" href="https://youtu.be/9aIYhjeYxzM" target="_blank" rel="noopener">Source video</a>
-			<a class="text-ink-faint transition hover:text-ink" href="https://substack.com/@natesnewsletter" target="_blank" rel="noopener">Nate's newsletter</a>
+				<a class="text-ink-faint transition-colors duration-150 ease-out hover:text-ink-strong" href="https://github.com/CodefiLabs/mybench" target="_blank" rel="noopener">GitHub</a>
+				<a class="text-ink-faint transition-colors duration-150 ease-out hover:text-ink-strong" href="https://skills.sh/CodefiLabs/mybench/personal-benchmark" target="_blank" rel="noopener">skills.sh</a>
+				<a class="text-ink-faint transition-colors duration-150 ease-out hover:text-ink-strong" href="https://youtu.be/9aIYhjeYxzM" target="_blank" rel="noopener">Source video</a>
+				<a class="text-ink-faint transition-colors duration-150 ease-out hover:text-ink-strong" href="https://substack.com/@natesnewsletter" target="_blank" rel="noopener">Nate's newsletter</a>
 				<span class="text-ink-faint">·</span>
 				<span class="text-ink-faint">MIT</span>
 			</div>
