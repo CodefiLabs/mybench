@@ -4,7 +4,7 @@
 
 **MyBench** is a 45-minute interview that turns your actual work into a private, saturate-resistant AI benchmark suite — and a methodology for running it across `model × harness` combinations so you know what to use, when.
 
-Inspired by [Nate B. Jones' private benchmark](https://www.youtube.com/watch?v=9aIYhjeYxzM) (Dingo / Splash Brothers / Artemis II). Built on the seven-principle scoring methodology from *Don't Let the LLM Pick a Number*.
+Inspired by [Nate B. Jones' private benchmark](https://youtu.be/9aIYhjeYxzM) (Dingo / Splash Brothers / Artemis II). Built on the seven-principle scoring methodology from [*Don't Let the LLM Pick a Number*](https://github.com/Codefilabs/pickanumber). By [Codefi](https://codefiworks.com).
 
 ## Quickstart
 
@@ -59,7 +59,7 @@ overall_confidence = min(c.confidence for c in criteria)
 
 Sparse evidence is *visibly* low-confidence. Sqrt normalization punishes evidence farming. The 5×5 matrix forces multi-stakeholder evaluation. Independent passes by different model families catch contradictions.
 
-Full methodology: [scoring/SCORING.md in PROJ-personal-benchmark](https://github.com/CodefiLabs/mybench).
+Full methodology: [Codefilabs/pickanumber](https://github.com/Codefilabs/pickanumber).
 
 ## Two dimensions
 
@@ -101,7 +101,8 @@ The site is static — `@sveltejs/adapter-static` builds to `build/` and deploys
 ## Credits
 
 - **Source video** — Nate B. Jones, [GPT-5.5 vs Claude vs Gemini: The Real Difference Nobody's Talking About](https://www.youtube.com/watch?v=9aIYhjeYxzM)
-- **Scoring methodology** — *Don't Let the LLM Pick a Number*, calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models
+- **Scoring methodology** — [*Don't Let the LLM Pick a Number*](https://github.com/Codefilabs/pickanumber), calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models
+- **Built by** — [Codefi](https://codefiworks.com)
 - **Pairwise diagnostic pattern** — borrows from lechmazur/writing-style
 - **Skill ecosystem** — [skills.sh](https://skills.sh)
 
