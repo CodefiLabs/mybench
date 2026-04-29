@@ -118,7 +118,7 @@
 		<div class="mt-16 max-w-3xl lg:mt-24">
 			<span class="tag">Inspired by Nate B. Jones · Dingo / Splash Brothers / Artemis II</span>
 			<h1
-				class="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight text-ink-50 sm:text-5xl lg:text-6xl"
+				class="mt-8 text-display font-bold text-ink-50"
 			>
 				Stop reading model reviews.<br />
 				<span class="text-accent-500">Build your own benchmark.</span>
@@ -167,7 +167,7 @@
 		<div class="grid gap-10 lg:grid-cols-3">
 			<div>
 				<div class="mb-3 font-mono text-xs uppercase tracking-wider text-ink-400">The problem</div>
-				<h2 class="text-2xl font-bold text-ink-50">
+				<h2 class="text-2xl font-semibold leading-[1.15] text-ink-50">
 					Every model release is a swarm of percentage points.
 				</h2>
 				<p class="mt-4 text-ink-300">
@@ -177,7 +177,7 @@
 			</div>
 			<div>
 				<div class="mb-3 font-mono text-xs uppercase tracking-wider text-ink-400">The miss</div>
-				<h2 class="text-2xl font-bold text-ink-50">None of it tells you which one to reach for.</h2>
+				<h2 class="text-2xl font-semibold leading-[1.15] text-ink-50">None of it tells you which one to reach for.</h2>
 				<p class="mt-4 text-ink-300">
 					Easy benchmarks make all frontier models look interchangeable. The differences only show
 					up on real work — underspecified briefs, messy files, traps in the data, ugly judgment
@@ -186,7 +186,7 @@
 			</div>
 			<div>
 				<div class="mb-3 font-mono text-xs uppercase tracking-wider text-ink-400">The fix</div>
-				<h2 class="text-2xl font-bold text-ink-50">A private benchmark, tuned to your work.</h2>
+				<h2 class="text-2xl font-semibold leading-[1.15] text-ink-50">A private benchmark, tuned to your work.</h2>
 				<p class="mt-4 text-ink-300">
 					Three to five tests designed to fail the current frontier. Real artifacts. Planted traps.
 					Re-run weekly when a new model ships. <em>Then</em> you know.
@@ -202,7 +202,7 @@
 <section id="how" class="border-b border-ink-800 bg-ink-800/30 py-20">
 	<div class="container-prose">
 		<div class="mb-3 font-mono text-xs uppercase tracking-wider text-accent-500">How it works</div>
-		<h2 class="text-3xl font-extrabold tracking-tight text-ink-50 sm:text-4xl">
+		<h2 class="text-section font-semibold text-ink-50">
 			One prompt. Forty-five minutes. A benchmark suite that's yours.
 		</h2>
 
@@ -215,7 +215,7 @@
 			] as step}
 				<li class="rounded-lg border border-ink-800 bg-ink-900 p-6 transition hover:border-ink-700">
 					<div class="font-mono text-sm font-semibold text-accent-500">{step.n}</div>
-					<h3 class="mt-2 text-lg font-bold text-ink-50">{step.title}</h3>
+					<h3 class="mt-2 text-lg font-semibold text-ink-50">{step.title}</h3>
 					<p class="mt-2 text-sm leading-relaxed text-ink-300">{step.body}</p>
 				</li>
 			{/each}
@@ -229,7 +229,7 @@
 <section class="border-b border-ink-800 bg-ink-900 py-20">
 	<div class="container-prose">
 		<div class="mb-3 font-mono text-xs uppercase tracking-wider text-ink-400">The archetypes</div>
-		<h2 class="text-3xl font-extrabold tracking-tight text-ink-50 sm:text-4xl">
+		<h2 class="text-section font-semibold text-ink-50">
 			Three tests, designed to fail.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-300">
@@ -243,7 +243,7 @@
 			{#each archetypes as a}
 				<article class="rounded-lg border border-ink-800 bg-ink-800/30 p-6">
 					<header class="flex items-baseline justify-between">
-						<h3 class="text-xl font-bold text-ink-50">{a.name}</h3>
+						<h3 class="text-xl font-semibold text-ink-50">{a.name}</h3>
 						<span class="font-mono text-[10px] uppercase tracking-wider text-ink-400">archetype</span>
 					</header>
 					<p class="mt-1 text-sm font-medium text-accent-500">{a.subtitle}</p>
@@ -260,7 +260,7 @@
 <section class="border-b border-ink-800 bg-ink-800/30 py-20">
 	<div class="container-prose">
 		<div class="mb-3 font-mono text-xs uppercase tracking-wider text-ink-400">Two dimensions</div>
-		<h2 class="text-3xl font-extrabold tracking-tight text-ink-50 sm:text-4xl">
+		<h2 class="text-section font-semibold text-ink-50">
 			Score <span class="font-mono text-accent-500">model × harness</span>, not just model.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-300">
@@ -283,7 +283,7 @@
 <section id="methodology" class="border-b border-ink-800 bg-ink-900 py-20">
 	<div class="container-prose">
 		<div class="mb-3 font-mono text-xs uppercase tracking-wider text-accent-500">Scoring methodology</div>
-		<h2 class="text-3xl font-extrabold tracking-tight text-ink-50 sm:text-4xl">
+		<h2 class="text-section font-semibold text-ink-50">
 			The LLM never picks a number.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-300">
@@ -302,7 +302,7 @@
 							{p.n}
 						</div>
 						<div>
-							<h3 class="text-sm font-bold leading-snug text-ink-50">{p.title}</h3>
+							<h3 class="text-sm font-semibold leading-snug text-ink-50">{p.title}</h3>
 							<p class="mt-2 text-sm leading-relaxed text-ink-300">{p.body}</p>
 						</div>
 					</div>
@@ -313,7 +313,7 @@
 		<!-- 5x5 matrix -->
 		<div class="mt-16">
 			<div class="mb-3 font-mono text-xs uppercase tracking-wider text-ink-400">The 5×5 matrix</div>
-			<h3 class="text-2xl font-bold text-ink-50">Five perspectives × five criteria.</h3>
+			<h3 class="text-2xl font-semibold leading-[1.15] text-ink-50">Five perspectives × five criteria.</h3>
 			<p class="mt-3 max-w-3xl text-ink-300">
 				Every benchmark scores against this matrix. Customizable per benchmark when the domain
 				demands. The formula runs once per criterion; the overall score is a weighted average.
@@ -352,7 +352,7 @@
 		<!-- Formula -->
 		<div class="mt-16">
 			<div class="mb-3 font-mono text-xs uppercase tracking-wider text-ink-400">The formula</div>
-			<h3 class="text-2xl font-bold text-ink-50">Discrete impact → diminishing returns → confidence-weighted.</h3>
+			<h3 class="text-2xl font-semibold leading-[1.15] text-ink-50">Discrete impact → diminishing returns → confidence-weighted.</h3>
 
 			<div class="mt-6 grid gap-4 lg:grid-cols-2">
 				<pre
@@ -393,7 +393,7 @@ self_check_span     = max(c.final) - min(c.final)
 <section id="prompt" class="border-b border-ink-800 bg-ink-800/30 py-20">
 	<div class="container-prose">
 		<div class="mb-3 font-mono text-xs uppercase tracking-wider text-accent-500">Get it</div>
-		<h2 class="text-3xl font-extrabold tracking-tight text-ink-50 sm:text-4xl">
+		<h2 class="text-section font-semibold text-ink-50">
 			Two ways to start.
 		</h2>
 
@@ -401,7 +401,7 @@ self_check_span     = max(c.final) - min(c.final)
 			<!-- Option A: copy prompt -->
 			<div class="rounded-lg border border-ink-800 bg-ink-900 p-6">
 				<div class="flex items-baseline justify-between">
-					<h3 class="text-lg font-bold text-ink-50">A · Copy the prompt</h3>
+					<h3 class="text-lg font-semibold text-ink-50">A · Copy the prompt</h3>
 					<span class="font-mono text-[10px] uppercase tracking-wider text-ink-400">simple</span>
 				</div>
 				<p class="mt-2 text-sm text-ink-300">
@@ -444,7 +444,7 @@ self_check_span     = max(c.final) - min(c.final)
 			<!-- Option B: install as skill -->
 			<div class="rounded-lg border border-accent-500/30 bg-ink-900 p-6 ring-1 ring-accent-500/10">
 				<div class="flex items-baseline justify-between">
-					<h3 class="text-lg font-bold text-ink-50">B · Install as a skill</h3>
+					<h3 class="text-lg font-semibold text-ink-50">B · Install as a skill</h3>
 					<span class="font-mono text-[10px] uppercase tracking-wider text-accent-500">via skills.sh</span>
 				</div>
 				<p class="mt-2 text-sm text-ink-300">
@@ -503,7 +503,7 @@ self_check_span     = max(c.final) - min(c.final)
 
 		<!-- After the prompt -->
 		<div class="mt-12 rounded-lg border border-ink-800 bg-ink-900 p-6">
-			<h3 class="text-lg font-bold text-ink-50">After the interview</h3>
+			<h3 class="text-lg font-semibold text-ink-50">After the interview</h3>
 			<p class="mt-2 text-sm text-ink-300">
 				Your benchmark suite lands in <code class="font-mono text-ink-100">benchmarks/</code> in your
 				working directory. Each folder has a prompt, input files, planted traps, and an evidence

@@ -5,16 +5,18 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: [
-					'Inter',
+					'"Public Sans"',
 					'ui-sans-serif',
 					'system-ui',
 					'-apple-system',
 					'Segoe UI',
-					'Helvetica',
-					'Arial',
 					'sans-serif'
 				],
-				mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace']
+				mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace']
+			},
+			fontSize: {
+				'display': ['clamp(2.75rem, 6vw + 1rem, 5.5rem)', { lineHeight: '0.98', letterSpacing: '-0.025em' }],
+				'section': ['clamp(1.875rem, 2.5vw + 1rem, 2.625rem)', { lineHeight: '1.1', letterSpacing: '-0.015em' }]
 			},
 			colors: {
 				ink: {
