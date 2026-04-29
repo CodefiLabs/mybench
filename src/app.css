@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-feature-settings: 'cv11', 'ss01', 'ss03';
+	}
+
+	::selection {
+		background: theme('colors.accent.500');
+		color: theme('colors.ink.900');
+	}
+}
+
+@layer components {
+	.container-prose {
+		@apply mx-auto w-full max-w-5xl px-6 lg:px-8;
+	}
+
+	.btn {
+		@apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition;
+	}
+
+	.btn-primary {
+		@apply bg-accent-500 text-ink-900 hover:bg-accent-400;
+	}
+
+	.btn-ghost {
+		@apply border border-ink-700 text-ink-100 hover:border-ink-500 hover:bg-ink-800;
+	}
+
+	.kbd {
+		@apply rounded border border-ink-700 bg-ink-800 px-1.5 py-0.5 font-mono text-xs text-ink-200;
+	}
+
+	.tag {
+		@apply inline-flex items-center rounded-full border border-ink-700 bg-ink-800 px-2.5 py-1 font-mono text-xs text-ink-300;
+	}
+}
