@@ -126,28 +126,15 @@
 				so you know what to use, when.
 			</p>
 
-			<div class="mt-10 flex flex-wrap items-center gap-3">
+			<div class="mt-12 flex flex-wrap items-baseline gap-x-8 gap-y-3">
 				<a href="#prompt" class="btn btn-primary">
+					Get the prompt
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
 						><path d="M5 12h14M12 5l7 7-7 7" /></svg
 					>
-					Get the prompt
 				</a>
-				<a
-					href="https://github.com/CodefiLabs/mybench"
-					target="_blank"
-					rel="noopener"
-					class="btn btn-ghost"
-				>
-					<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
-						><path
-							d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.18-.02-2.13-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 015.79 0c2.21-1.5 3.18-1.18 3.18-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13 0 1.54-.01 2.78-.01 3.16 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"
-						/></svg
-					>
-					View on GitHub
-				</a>
-				<a href="#how" class="text-sm text-ink-soft underline-offset-4 hover:text-ink hover:underline">
-					or, see how it works ↓
+				<a href="#how" class="text-sm text-ink-soft underline underline-offset-[6px] decoration-rule hover:decoration-ink-strong hover:text-ink-strong">
+					see how it works ↓
 				</a>
 			</div>
 		</div>
@@ -157,9 +144,9 @@
 <!-- ╭──────────────────────────────────────────────────────────────╮
      │ PROBLEM                                                       │
      ╰──────────────────────────────────────────────────────────────╯ -->
-<section class="border-b border-rule py-20">
+<section class="border-b border-rule py-16 lg:py-20">
 	<div class="container-prose">
-		<div class="grid gap-10 lg:grid-cols-3">
+		<div class="grid gap-x-10 gap-y-12 lg:grid-cols-3">
 			<div>
 				<h2 class="text-2xl font-semibold leading-[1.15] text-ink-strong">
 					Every model release is a swarm of percentage points.
@@ -191,22 +178,22 @@
 <!-- ╭──────────────────────────────────────────────────────────────╮
      │ HOW IT WORKS                                                  │
      ╰──────────────────────────────────────────────────────────────╯ -->
-<section id="how" class="border-b border-rule py-20">
+<section id="how" class="border-b border-rule py-20 lg:py-24">
 	<div class="container-prose">
 		<h2 class="text-section font-semibold text-ink-strong">
 			One prompt. Forty-five minutes. A benchmark suite that's yours.
 		</h2>
 
-		<ol class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+		<ol class="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
 			{#each [
 				{ n: '01', title: 'Copy the prompt', body: 'Or install it as a skill. Hand it to any AI agent with shell access — Claude Code, Codex, Cursor, Paperclip.' },
 				{ n: '02', title: 'Answer the interview', body: 'Six sections covering your real work, your messy data, your taste, your standards. ~45 min.' },
 				{ n: '03', title: 'Get a benchmark suite', body: 'Three to five tests with prompts, input files, planted traps, and an evidence guide for scoring.' },
 				{ n: '04', title: 'Run model × harness', body: 'Same suite across the combinations you care about. Score using the seven-principle formula.' }
 			] as step}
-				<li class="rounded-lg border border-rule bg-paper p-6 transition hover:border-rule">
-					<div class="font-mono text-sm font-semibold text-ink-strong">{step.n}</div>
-					<h3 class="mt-2 text-lg font-semibold text-ink-strong">{step.title}</h3>
+				<li class="border-t border-rule pt-4">
+					<div class="font-mono text-3xl font-semibold text-ink-strong">{step.n}</div>
+					<h3 class="mt-3 text-lg font-semibold text-ink-strong">{step.title}</h3>
 					<p class="mt-2 text-sm leading-relaxed text-ink-soft">{step.body}</p>
 				</li>
 			{/each}
@@ -217,7 +204,7 @@
 <!-- ╭──────────────────────────────────────────────────────────────╮
      │ ARCHETYPES — Nate's three                                     │
      ╰──────────────────────────────────────────────────────────────╯ -->
-<section class="border-b border-rule py-20">
+<section class="border-b border-rule py-24 lg:py-32">
 	<div class="container-prose">
 		<h2 class="text-section font-semibold text-ink-strong">
 			Three tests, designed to fail.
@@ -229,12 +216,14 @@
 			deliverables — but the shape is the same.
 		</p>
 
-		<div class="mt-10 grid gap-5 lg:grid-cols-3">
+		<div class="mt-14 divide-y divide-rule border-t border-rule">
 			{#each archetypes as a}
-				<article class="rounded-lg border border-rule bg-paper-sunk p-6">
-					<h3 class="text-xl font-semibold text-ink-strong">{a.name}</h3>
-					<p class="mt-1 text-sm italic text-ink-soft">{a.subtitle}</p>
-					<p class="mt-4 text-sm leading-relaxed text-ink-soft">{a.body}</p>
+				<article class="grid gap-2 py-8 lg:grid-cols-[12rem_1fr] lg:gap-10 lg:py-10">
+					<div>
+						<h3 class="text-2xl font-semibold text-ink-strong">{a.name}</h3>
+						<p class="mt-1 text-sm italic text-ink-soft">{a.subtitle}</p>
+					</div>
+					<p class="leading-relaxed text-ink-soft lg:max-w-2xl">{a.body}</p>
 				</article>
 			{/each}
 		</div>
@@ -244,7 +233,7 @@
 <!-- ╭──────────────────────────────────────────────────────────────╮
      │ TWO DIMENSIONS                                                │
      ╰──────────────────────────────────────────────────────────────╯ -->
-<section class="border-b border-rule py-20">
+<section class="border-b border-rule py-16 lg:py-20">
 	<div class="container-prose">
 		<h2 class="text-section font-semibold text-ink-strong">
 			Score <span class="font-mono font-semibold text-ink-strong">model × harness</span>, not just model.
@@ -266,7 +255,7 @@
 <!-- ╭──────────────────────────────────────────────────────────────╮
      │ METHODOLOGY                                                   │
      ╰──────────────────────────────────────────────────────────────╯ -->
-<section id="methodology" class="border-b border-rule py-20">
+<section id="methodology" class="border-b border-rule py-24 lg:py-32">
 	<div class="container-prose">
 		<h2 class="text-section font-semibold text-ink-strong">
 			The LLM never picks a number.
@@ -277,23 +266,17 @@
 		</p>
 
 		<!-- 7 principles -->
-		<ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+		<ol class="mt-14 grid gap-x-12 gap-y-2 sm:grid-cols-2">
 			{#each principles as p}
-				<li class="rounded-lg border border-rule bg-paper-sunk p-5 transition hover:border-rule">
-					<div class="flex items-start gap-3">
-						<div
-							class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-rule font-mono text-xs font-semibold text-ink-strong"
-						>
-							{p.n}
-						</div>
-						<div>
-							<h3 class="text-sm font-semibold leading-snug text-ink-strong">{p.title}</h3>
-							<p class="mt-2 text-sm leading-relaxed text-ink-soft">{p.body}</p>
-						</div>
+				<li class="grid grid-cols-[2.5rem_1fr] items-baseline gap-x-3 border-t border-rule py-5">
+					<span class="font-mono text-sm font-semibold text-ink-faint">0{p.n}</span>
+					<div>
+						<h3 class="text-base font-semibold leading-snug text-ink-strong">{p.title}</h3>
+						<p class="mt-2 text-sm leading-relaxed text-ink-soft">{p.body}</p>
 					</div>
 				</li>
 			{/each}
-		</ul>
+		</ol>
 
 		<!-- 5x5 matrix -->
 		<div class="mt-16">
@@ -322,7 +305,7 @@
 									{p}
 								</td>
 								{#each criteria as _}
-									<td class="px-3 py-3 text-ink-strong0">
+									<td class="px-3 py-3 text-ink-faint">
 										<span class="inline-block h-2 w-2 rounded-full bg-rule"></span>
 									</td>
 								{/each}
@@ -373,7 +356,7 @@ self_check_span     = max(c.final) - min(c.final)
 <!-- ╭──────────────────────────────────────────────────────────────╮
      │ GET THE PROMPT                                                │
      ╰──────────────────────────────────────────────────────────────╯ -->
-<section id="prompt" class="border-b border-rule py-20">
+<section id="prompt" class="border-b border-rule py-24 lg:py-32">
 	<div class="container-prose">
 		<h2 class="text-section font-semibold text-ink-strong">
 			Two ways to start.
@@ -474,9 +457,9 @@ self_check_span     = max(c.final) - min(c.final)
 		</div>
 
 		<!-- After the prompt -->
-		<div class="mt-12 rounded-lg border border-rule bg-paper p-6">
+		<div class="mt-16 border-t border-rule pt-8">
 			<h3 class="text-lg font-semibold text-ink-strong">After the interview</h3>
-			<p class="mt-2 text-sm text-ink-soft">
+			<p class="mt-3 max-w-3xl text-ink-soft">
 				Your benchmark suite lands in <code class="font-mono text-ink">benchmarks/</code> in your
 				working directory. Each folder has a prompt, input files, planted traps, and an evidence
 				guide. Run a benchmark by handing the prompt to a runner (any model + any harness). Score it
@@ -506,12 +489,12 @@ self_check_span     = max(c.final) - min(c.final)
 				<a class="text-ink-faint transition hover:text-ink" href="https://github.com/CodefiLabs/mybench" target="_blank" rel="noopener">GitHub</a>
 				<a class="text-ink-faint transition hover:text-ink" href="https://skills.sh/CodefiLabs/mybench/personal-benchmark" target="_blank" rel="noopener">skills.sh</a>
 				<a class="text-ink-faint transition hover:text-ink" href="https://www.youtube.com/watch?v=9aIYhjeYxzM" target="_blank" rel="noopener">Source video</a>
-				<span class="text-ink-strong0">·</span>
-				<span class="text-ink-strong0">MIT</span>
+				<span class="text-ink-faint">·</span>
+				<span class="text-ink-faint">MIT</span>
 			</div>
 		</div>
 
-		<p class="mt-8 max-w-2xl text-xs leading-relaxed text-ink-strong0">
+		<p class="mt-8 max-w-2xl text-xs leading-relaxed text-ink-faint">
 			Built on the seven-principle scoring methodology from <em>Don't Let the LLM Pick a Number</em>.
 			The methodology is calibrated on 18 hackathon submissions and 342 BLS occupations across 9
 			models. Inspired by Nate B. Jones' private benchmark approach. The pairwise scoring layer
