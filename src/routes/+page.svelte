@@ -249,7 +249,7 @@
 			The LLM never picks a number.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-soft">
-			The seven-principle scoring methodology comes from <em class="not-italic font-semibold text-ink-strong">Don't Let the LLM Pick a Number</em>: the LLM finds discrete-impact evidence items, math computes the score. Calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models. Validated, reused here unchanged.
+			The seven-principle scoring methodology comes from <a class="font-semibold text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://github.com/Codefilabs/pickanumber" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>: the LLM finds discrete-impact evidence items, math computes the score. Calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models. Validated, reused here unchanged.
 		</p>
 
 		<!-- 7 principles -->
@@ -481,7 +481,7 @@ self_check_span     = max(c.final) - min(c.final)
 		</div>
 
 		<p class="mt-8 max-w-2xl text-xs leading-relaxed text-ink-faint">
-			Built on the seven-principle scoring methodology from <em>Don't Let the LLM Pick a Number</em>.
+			Built on the seven-principle scoring methodology from <a class="underline underline-offset-4 decoration-rule hover:text-ink-strong hover:decoration-ink-strong" href="https://github.com/Codefilabs/pickanumber" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>.
 			The methodology is calibrated on 18 hackathon submissions and 342 BLS occupations across 9
 			models. Inspired by Nate B. Jones' private benchmark approach. The pairwise scoring layer
 			borrows from lechmazur/writing-style. Real artifact format-as-test is borrowed directly from
