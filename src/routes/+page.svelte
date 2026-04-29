@@ -476,7 +476,7 @@ self_check_span     = max(c.final) - min(c.final)
 				>
 					M
 				</div>
-				<span class="font-mono text-xs tracking-wider text-ink-soft">MYBENCH · CODEFILABS</span>
+				<span class="font-mono text-xs tracking-wider text-ink-soft">MYBENCH · <a class="transition-colors duration-150 ease-out hover:text-ink-strong" href="https://codefiworks.com" target="_blank" rel="noopener">CODEFI</a></span>
 			</div>
 
 			<div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
