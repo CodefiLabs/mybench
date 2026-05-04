@@ -122,6 +122,11 @@
 				suite, and runs it across <span class="phrase">model × harness</span> combos
 				so you know what to use, when.
 			</p>
+			<p class="mt-4 text-sm text-ink-faint lg:text-base">
+				New: a 30-second
+				<a class="font-medium text-ink-soft underline underline-offset-4 decoration-ink-faint hover:text-ink-strong hover:decoration-ink-strong" href="https://pickanumber.codefiworks.com/#regimes" target="_blank" rel="noopener">calibration probe</a>
+				tells you which models are even worth running through the grid before you spend the time.
+			</p>
 
 			<div class="mt-12 flex flex-wrap items-baseline gap-x-8 gap-y-3">
 				<a href="#prompt" class="btn btn-primary">
@@ -178,15 +183,16 @@
 <section id="how" class="border-b border-rule py-20 lg:py-24">
 	<div class="container-prose">
 		<h2 class="text-section font-semibold text-ink-strong">
-			One prompt. Forty-five minutes. A benchmark suite that's yours.
+			One interview. One probe per model. A benchmark suite that's yours.
 		</h2>
 
-		<ol class="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+		<ol class="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-5">
 			{#each [
 				{ n: '01', title: 'Copy the prompt', body: 'Or install it as a skill. Hand it to any AI agent with shell access: Claude Code, Codex, Cursor, Paperclip.' },
 				{ n: '02', title: 'Answer the interview', body: 'Six sections covering your real work, your messy data, your taste, your standards. ~45 min.' },
 				{ n: '03', title: 'Get a benchmark suite', body: 'Three to five tests with prompts, input files, planted traps, and an evidence guide for scoring.' },
-				{ n: '04', title: 'Run model × harness', body: 'Same suite across the combinations you care about. Score using the seven-principle formula.' }
+				{ n: '04', title: 'Probe each model', body: '30 seconds per model. Skip PICKS_A_NUMBER and JITTERY before they waste your grid time. CALIBRATED, INFLATION_LIKELY, DEFLATION_LIKELY pass through.' },
+				{ n: '05', title: 'Run model × harness', body: 'Same suite across the combinations you care about. Score with the seven-principle formula. Calibrated models use a lighter touch; inflated models get the full pipeline.' }
 			] as step}
 				<li class="border-t border-rule pt-4">
 					<div class="font-mono text-3xl font-semibold text-ink-strong">{step.n}</div>
@@ -229,10 +235,10 @@
      ╰──────────────────────────────────────────────────────────────╯ -->
 <section class="border-b border-rule py-12 lg:py-14">
 	<div class="container-prose">
-		<dl class="grid grid-cols-2 gap-y-6 sm:grid-cols-4">
+		<dl class="grid grid-cols-2 gap-y-6 sm:grid-cols-5">
 			<div>
-				<dt class="font-mono text-4xl font-semibold tabular text-ink-strong sm:text-5xl">18</dt>
-				<dd class="mt-1 text-xs text-ink-faint">hackathon submissions</dd>
+				<dt class="font-mono text-4xl font-semibold tabular text-ink-strong sm:text-5xl">90+</dt>
+				<dd class="mt-1 text-xs text-ink-faint">hackathon submissions (3 events)</dd>
 			</div>
 			<div>
 				<dt class="font-mono text-4xl font-semibold tabular text-ink-strong sm:text-5xl">342</dt>
@@ -243,12 +249,16 @@
 				<dd class="mt-1 text-xs text-ink-faint">model families</dd>
 			</div>
 			<div>
+				<dt class="font-mono text-4xl font-semibold tabular text-ink-strong sm:text-5xl">5</dt>
+				<dd class="mt-1 text-xs text-ink-faint">calibration regimes</dd>
+			</div>
+			<div>
 				<dt class="font-mono text-4xl font-semibold tabular text-ink-strong sm:text-5xl">7</dt>
 				<dd class="mt-1 text-xs text-ink-faint">scoring principles</dd>
 			</div>
 		</dl>
 		<p class="mt-6 max-w-2xl text-sm text-ink-faint">
-			The scoring methodology was calibrated on real submissions across 9 model families before being reused here. <a class="underline underline-offset-4 decoration-ink-faint hover:text-ink-strong hover:decoration-ink-strong" href="https://pickanumber.codefiworks.com" target="_blank" rel="noopener">See the paper.</a>
+			The scoring methodology was calibrated on real submissions across 9 model families and tested on a held-out 6-model v3 grid in the v0.8 paper. The 5-regime classifier (CALIBRATED, INFLATION_LIKELY, DEFLATION_LIKELY, PICKS_A_NUMBER, JITTERY) tells you whether the methodology will help on a given model before you run it. <a class="underline underline-offset-4 decoration-ink-faint hover:text-ink-strong hover:decoration-ink-strong" href="https://pickanumber.codefiworks.com" target="_blank" rel="noopener">See the paper.</a>
 		</p>
 	</div>
 </section>
@@ -282,7 +292,7 @@
 			The LLM never picks a number.
 		</h2>
 		<p class="mt-4 max-w-3xl text-ink-soft">
-			The LLM finds discrete-impact evidence items; the formula computes the score. Methodology from <a class="font-semibold text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://pickanumber.codefiworks.com" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>, calibrated on 18 hackathon submissions and 342 BLS occupations across 9 models. Reused here unchanged.
+			The LLM finds discrete-impact evidence items; the formula computes the score. Methodology from <a class="font-semibold text-ink-strong underline underline-offset-4 decoration-rule hover:decoration-ink-strong" href="https://pickanumber.codefiworks.com" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>, calibrated on 90+ hackathon submissions across three events and 342 BLS occupations across 9 models. v0.8 added a six-model v3 held-out grid and a five-regime classifier — the methodology is not a free lunch, and the calibration probe tells you which models it will help on before you run them.
 		</p>
 
 		<!-- Worked example (leads — the page's strongest move) -->
@@ -493,6 +503,18 @@ self_check_span     = max(c.final) - min(c.final)
 				with the seven-principle method. Compare cells in your <span class="phrase">model × harness</span> grid.
 				Re-run weekly when a new model lands.
 			</p>
+
+			<div class="mt-8 rounded-lg border border-rule bg-paper-sunk p-5 lg:p-6">
+				<h4 class="text-base font-semibold text-ink-strong">Before you run the grid: probe each scoring model.</h4>
+				<p class="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+					A model × harness grid can run for hours. The
+					<a class="font-medium text-ink-strong underline underline-offset-4 decoration-ink-faint hover:decoration-ink-strong" href="https://pickanumber.codefiworks.com/#regimes" target="_blank" rel="noopener">calibration probe</a>
+					takes 30 seconds per model and tells you which ones will produce reliable scores at all.
+					Models in PICKS_A_NUMBER or JITTERY regimes can't differentiate quality regardless of how
+					good your benchmarks are — skip them and save the grid time.
+				</p>
+				<pre class="mt-4 overflow-x-auto rounded-md border border-rule bg-paper p-3 font-mono text-xs leading-relaxed text-ink"><code>$ npx skills add CodefiLabs/pickanumber/calibration-probe</code></pre>
+			</div>
 		</div>
 	</div>
 </section>
@@ -528,8 +550,9 @@ self_check_span     = max(c.final) - min(c.final)
 
 		<p class="mt-8 max-w-2xl text-xs leading-relaxed text-ink-faint">
 			Built on the seven-principle scoring methodology from <a class="underline underline-offset-4 decoration-rule hover:text-ink-strong hover:decoration-ink-strong" href="https://pickanumber.codefiworks.com" target="_blank" rel="noopener">Don't Let the LLM Pick a Number</a>.
-			The methodology is calibrated on 18 hackathon submissions and 342 BLS occupations across 9
-			models. Inspired by Nate B. Jones' private benchmark approach. The pairwise scoring layer
+			The methodology is calibrated on 90+ hackathon submissions across three events and 342 BLS
+			occupations across 9 models, with a v0.8 six-model held-out grid + 30-second calibration
+			probe. Inspired by Nate B. Jones' private benchmark approach. The pairwise scoring layer
 			borrows from lechmazur/writing-style. Real artifact format-as-test is borrowed directly from
 			Nate.
 		</p>

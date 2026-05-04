@@ -23,6 +23,7 @@ This skill is an interviewer + author + builder. You will:
 - **Real artifacts.** `.pptx` means a real PowerPoint, not markdown wearing a `.pptx` extension. Format-as-test reveals harness differences fast.
 - **Two dimensions.** Score `model × harness`, not just model. Same prompt runs across many runners.
 - **Three failure modes.** Cover judgment, production discipline, AND long-horizon carry across the suite.
+- **Probe each model first.** Before running the suite across the model × harness grid, run the `calibration-probe` skill on every candidate scoring model. Models in PICKS_A_NUMBER or JITTERY regimes can't differentiate quality — skip them. Models in CALIBRATED regime use a lighter touch (Principles 1, 4, 5 only). Models in INFLATION_LIKELY regime get the full pipeline. Saves hours of grid runs on models that can't score reliably regardless of the benchmark.
 
 ## Interview style
 
@@ -233,6 +234,8 @@ Three required parts:
 
 Reference each planted trap by ID and call out which cell it belongs in (e.g. "T-3 → adversary × trap_handling, +5 if caught, -5 if normalized").
 
+**Per-criterion item floor (≥ 2 items per criterion, across all 5 perspectives).** Sparse criteria (0–1 items) collapse toward 50 under the density multiplier — that's a confirmed regression on every model tested in the v0.8 v3 grid. Force at least 2 items per criterion. If the scoring model genuinely can't justify 2, downweight that criterion in `meta.yaml` rather than letting the formula bury the signal in noise.
+
 ### `meta.yaml` rules
 
 ```yaml
@@ -304,11 +307,17 @@ Constraints: hard cap 5 items per perspective per criterion per pass; minimum ta
 
 ## Done
 
-Write a short summary to chat: N benchmarks authored, M capability axes covered, K traps planted, recommended first run (which model × harness combos to test first), time-to-results estimate. Then stop.
+Write a short summary to chat: N benchmarks authored, M capability axes covered, K traps planted, recommended first run (which model × harness combos to test first), time-to-results estimate.
+
+**One last recommendation before you stop.** Tell the user: *"Before you actually run this suite across your model × harness grid, install `calibration-probe` and run it on each candidate scoring model. The probe takes 30 seconds per model and tells you which ones are in regimes where your scores will be reliable. Models in PICKS_A_NUMBER or JITTERY regimes will produce noise no matter how good these benchmarks are — skip them and save the grid time."*
+
+Then stop.
 
 ## See also
 
-- Source video: https://www.youtube.com/watch?v=9aIYhjeYxzM (Nate B. Jones on private benches)
-- Full spec: https://github.com/CodefiLabs/mybench
-- Web version: https://mybench.codefiworks.com
-- Scoring methodology origin: PROJ-ai-judge-scoring "Don't Let the LLM Pick a Number"
+- **Calibration probe** (preflight regime classifier): `npx skills add CodefiLabs/pickanumber/calibration-probe` — run on every scoring model before this suite
+- **Methodology paper** (v0.8): https://pickanumber.codefiworks.com — six-model regime taxonomy + diagnostic
+- **Scoring skills** (the formula applied): `evidence-scoring`, `what-works-feedback-judge`, `hackathon-judge` at https://github.com/CodefiLabs/pickanumber
+- **Source video**: https://www.youtube.com/watch?v=9aIYhjeYxzM (Nate B. Jones on private benches)
+- **Full spec**: https://github.com/CodefiLabs/mybench
+- **Web version**: https://mybench.codefiworks.com
