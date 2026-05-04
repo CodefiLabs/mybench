@@ -3,8 +3,10 @@
 
 	let copyState = $state('idle'); // idle | copied | error
 	let installCopyState = $state('idle');
+	let probeCopyState = $state('idle');
 
 	const INSTALL_CMD = 'npx skills add CodefiLabs/mybench';
+	const PROBE_INSTALL_CMD = 'npx skills add CodefiLabs/pickanumber/calibration-probe';
 
 	async function copyPrompt() {
 		try {
@@ -25,6 +27,17 @@
 		} catch (e) {
 			installCopyState = 'error';
 			setTimeout(() => (installCopyState = 'idle'), 2200);
+		}
+	}
+
+	async function copyProbe() {
+		try {
+			await navigator.clipboard.writeText(PROBE_INSTALL_CMD);
+			probeCopyState = 'copied';
+			setTimeout(() => (probeCopyState = 'idle'), 2200);
+		} catch (e) {
+			probeCopyState = 'error';
+			setTimeout(() => (probeCopyState = 'idle'), 2200);
 		}
 	}
 
@@ -513,7 +526,35 @@ self_check_span     = max(c.final) - min(c.final)
 					Models in PICKS_A_NUMBER or JITTERY regimes can't differentiate quality regardless of how
 					good your benchmarks are — skip them and save the grid time.
 				</p>
-				<pre class="mt-4 overflow-x-auto rounded-md border border-rule bg-paper p-3 font-mono text-xs leading-relaxed text-ink"><code>$ npx skills add CodefiLabs/pickanumber/calibration-probe</code></pre>
+				<button
+					type="button"
+					onclick={copyProbe}
+					title={PROBE_INSTALL_CMD}
+					class="group mt-4 flex w-full items-center justify-between gap-3 rounded-md border border-rule bg-paper px-4 py-3 font-mono text-xs text-ink transition-colors duration-150 ease-out hover:border-ink-soft sm:text-sm"
+				>
+					<span class="min-w-0 flex-1 truncate text-left">
+						<span class="text-ink-faint">$</span> {PROBE_INSTALL_CMD}
+					</span>
+					{#if probeCopyState === 'copied'}
+						<span class="shrink-0 font-semibold text-ink-strong">✓ copied</span>
+					{:else if probeCopyState === 'error'}
+						<span class="shrink-0 font-semibold text-ink-strong">select manually</span>
+					{:else}
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							class="shrink-0 text-ink-faint transition group-hover:text-ink"
+							aria-hidden="true"
+							><rect x="9" y="9" width="13" height="13" rx="2" /><path
+								d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+							/></svg
+						>
+					{/if}
+				</button>
 			</div>
 		</div>
 	</div>
